@@ -6,7 +6,7 @@ print(numbers[:-1]) #3 to 9
 print(numbers[3:4]) #1
 print(5 in numbers) # True
 print("3" in numbers) #false
-numbers + [6, 5, 3]  #
+numbers + [6, 5, 3]  # add
 
 numbers[0] = "ten"
 print(numbers)
