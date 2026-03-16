@@ -1,4 +1,4 @@
-Language,Typing,Pointer_Arithmetic,Reflection,Year
+Language,Typing,Reflection,Point_Arithmetic,Year
 Java,Static,Yes,Yes,1995
 C++,Static,No,Yes,1983
 Go,Static,Yes,No,2009
