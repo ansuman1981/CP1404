@@ -26,6 +26,7 @@ def main():
 
 
 def load_project(projects):
+    """load the file"""
     in_file = open("projects.txt", "r")
     in_file.readline()          # skip header
     for line in in_file:
