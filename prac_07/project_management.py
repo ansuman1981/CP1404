@@ -43,6 +43,7 @@ def load_project(projects):
 
 
 def display_projects(projects):
+    """display projects list"""
     completed_projects = []
     incompleted_projects = []
     # separate the project
