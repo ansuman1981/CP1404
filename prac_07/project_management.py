@@ -43,8 +43,26 @@ def load_project(projects):
 
 
 def display_projects(projects):
+    completed_projects = []
+    incompleted_projects = []
+    # separate the project
     for project in projects:
-        print(project)
+        if project.completion == 100:
+            completed_projects.append(project)
+        else:
+            incompleted_projects.append(project)
 
+    # sort by priority
+    completed_projects.sort(key=lambda p: p.priority)
+    incompleted_projects.sort(key=lambda p: p.priority)
+
+    # display
+    print("Incomplete projects: ")
+    for project in incompleted_projects:
+        print(f"  {project}")
+
+    print("Completed projects: ")
+    for project in completed_projects:
+        print(f"  {project}")
 
 main()
