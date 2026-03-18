@@ -22,17 +22,31 @@ def main():
             display_projects(projects)
         elif choice == "U":
             update_project(projects)
+        elif choice =="A":
+            add_project(projects)
         else:
             print("good")
         choice = input(">>>").upper()
 
-
+def add_project(projects):
+    print("lets add new project")
 def update_project(projects):
+    # display all the projects with index
     for i, project in enumerate(projects):
         print(f"{i}. {project}")
-
+    # user select the project
     choice = int(input("Projects choice:"))
-
+    project = projects[choice]
+    # print the project
+    print(project)
+    # update the completion
+    new_completion = input("New percentage:")
+    if new_completion != "":
+        project.completion = int(new_completion)
+    # update the priority
+    new_priority = input("New priority:")
+    if new_priority != "":
+        project.priority = int(new_priority)
 
 
 def load_project(projects):
