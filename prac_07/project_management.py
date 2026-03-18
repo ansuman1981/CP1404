@@ -20,9 +20,19 @@ def main():
         if choice == "D":
             load_project(projects)
             display_projects(projects)
+        elif choice == "U":
+            update_project(projects)
         else:
             print("good")
-        choice = input(">>>").lower()
+        choice = input(">>>").upper()
+
+
+def update_project(projects):
+    for i, project in enumerate(projects):
+        print(f"{i}. {project}")
+
+    choice = int(input("Projects choice:"))
+
 
 
 def load_project(projects):
