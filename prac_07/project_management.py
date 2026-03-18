@@ -18,6 +18,7 @@ def main():
     choice = input(">>>").upper()
     while choice != "Q":
         if choice == "D":
+            load_project(projects)
             display_projects(projects)
         elif choice == "U":
             update_project(projects)
@@ -31,14 +32,17 @@ def main():
 
 def filter_project(projects):
     date_string = input("Show projects that start after date (dd/mm/yy): ")
-    # covert input to date
+
+    # convert input to date
     filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+
     filtered_projects = []
 
     for project in projects:
-        # convert input to date
-        project_date = datetime.datetime.strptime(project["date"], "%d/%m/%Y").date()
-        if project_date>= filter_date:
+        # convert project date
+        project_date = datetime.datetime.strptime(project.start_date, "%d/%m/%Y").date()
+
+        if project_date >= filter_date:
             filtered_projects.append(project)
 
     # sort by date
@@ -47,7 +51,6 @@ def filter_project(projects):
     # display
     for project in filtered_projects:
         print(project)
-
 
 def add_project(projects):
     print("lets add new project")
