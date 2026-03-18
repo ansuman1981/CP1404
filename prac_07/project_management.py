@@ -2,7 +2,7 @@
 CP1404 Practical
 Project Management program
 """
-
+import datetime
 from project import Project
 MENU ="""(L)oad projects  
 (S)ave projects  
@@ -18,15 +18,36 @@ def main():
     choice = input(">>>").upper()
     while choice != "Q":
         if choice == "D":
-            load_project(projects)
             display_projects(projects)
         elif choice == "U":
             update_project(projects)
         elif choice =="A":
             add_project(projects)
+        elif choice =="F":
+            filter_project(projects)
         else:
             print("good")
         choice = input(">>>").upper()
+
+def filter_project(projects):
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    # covert input to date
+    filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    filtered_projects = []
+
+    for project in projects:
+        # convert input to date
+        project_date = datetime.datetime.strptime(project["date"], "%d/%m/%Y").date()
+        if project_date>= filter_date:
+            filtered_projects.append(project)
+
+    # sort by date
+    filtered_projects.sort(key=lambda p: datetime.datetime.strptime(p.start_date, "%d/%m/%Y"))
+
+    # display
+    for project in filtered_projects:
+        print(project)
+
 
 def add_project(projects):
     print("lets add new project")
@@ -37,9 +58,9 @@ def add_project(projects):
     completion = int(input("Percent complete: "))
     # create Project object
     new_project = Project(name, start_date, priority, cost_estimate, completion)
-
     # add to list
     projects.append(new_project)
+
 def update_project(projects):
     # display all the projects with index
     for i, project in enumerate(projects):
