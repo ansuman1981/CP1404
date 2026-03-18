@@ -30,6 +30,16 @@ def main():
 
 def add_project(projects):
     print("lets add new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    # create Project object
+    new_project = Project(name, start_date, priority, cost_estimate, completion)
+
+    # add to list
+    projects.append(new_project)
 def update_project(projects):
     # display all the projects with index
     for i, project in enumerate(projects):
