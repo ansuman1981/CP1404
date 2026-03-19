@@ -31,8 +31,16 @@ def main():
             filename = input("enter the file name ")
             save_projects(projects, filename)
         else:
-            print("good")
+            print("Invalid choice")
         choice = input(">>>").upper()
+    # quit option
+    save_choice = input("Would you like to save to projects.txt? ")
+    if save_choice.lower().startswith("y"):
+        save_projects(projects, "projects.txt")
+
+    print("Thank you for using custom-built project management software.")
+
+
 def save_projects(projects,filename):
     with open(filename, "w") as out_file:
         out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion\n")
