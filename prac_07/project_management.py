@@ -13,6 +13,7 @@ MENU ="""(L)oad projects
 (Q)uit"""
 
 def main():
+    print("Welcome to Pythonic Project Management")
     print(MENU)
     projects = []
     choice = input(">>>").upper()
@@ -27,7 +28,8 @@ def main():
         elif choice =="F":
             filter_project(projects)
         elif choice == "S":
-            file_name = input("enter the file name ")
+            filename = input("enter the file name ")
+            save_projects(projects, filename)
         else:
             print("good")
         choice = input(">>>").upper()
