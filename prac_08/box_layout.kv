@@ -1,13 +1,23 @@
 BoxLayout:
     orientation: 'vertical'
-#       orientation: 'horizontal'
+    padding: 20
+    spacing: 10
+
     Button:
         text: 'Clear'
-    Button:
-        text: 'two'
+        on_press: app.handle_clear()
+
+    TextInput:
+        id: input_name
+        text: ''
+        multiline: False
+        font_size: 24
+        padding_y: [10, 10]
+
     Button:
         text: 'Greet'
         on_press: app.handle_greet()
+
     Label:
         id: output_label
         text: 'Enter your name'
