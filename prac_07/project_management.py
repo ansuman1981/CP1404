@@ -26,9 +26,18 @@ def main():
             add_project(projects)
         elif choice =="F":
             filter_project(projects)
+        elif choice == "S":
+            file_name = input("enter the file name ")
         else:
             print("good")
         choice = input(">>>").upper()
+def save_projects(projects,filename):
+    with open(filename, "w") as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion\n")
+        for project in projects:
+            out_file.write(f"{project.name}\t{project.start_date}\t{project.priority}\t"
+                           f"{project.cost_estimate}\t{project.completion}\n")
+
 
 def filter_project(projects):
     date_string = input("Show projects that start after date (dd/mm/yy): ")
