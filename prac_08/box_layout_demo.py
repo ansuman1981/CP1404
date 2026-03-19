@@ -20,3 +20,6 @@ class BoxLayoutDemo(App):
     def handle_clear(self):
         self.root.ids.input_name.text = ''
         self.root.ids.output_label.text = 'Enter your name'
+
+if __name__ == '__main__':
+    BoxLayoutDemo().run()
