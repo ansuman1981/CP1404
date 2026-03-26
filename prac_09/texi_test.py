@@ -1,6 +1,6 @@
 from taxi import Taxi
 
-my_taxi = Taxi("prius1", 100, 1.23)
+my_taxi = Taxi("prius1", 100)
 print(my_taxi)
 my_taxi.drive(40)
 print(my_taxi)
