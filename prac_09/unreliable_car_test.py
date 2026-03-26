@@ -1,8 +1,13 @@
 from unreliable_car import UnreliableCar
 
-# Make two cars with different reliability
-reliable_car = UnreliableCar("Mostly Reliable", 100, 90)  # 90% reliable
-unreliable_car = UnreliableCar("Barely Goes", 100, 30)  # 30% reliable
+# Make a car with 30% reliability
+unreliable_car = UnreliableCar("Barely Goes", 100, 30)
 
-print(reliable_car)
-print(unreliable_car)
+total_distance = 0
+attempts = 100
+
+for i in range(attempts):
+    distance = unreliable_car.drive(1)
+    total_distance += distance
+
+print(f"Total distance driven in {attempts} attempts: {total_distance}")
