@@ -39,9 +39,3 @@ class Car:
         self.odometer += distance
         return distance
 
-fuel1 = Car("ansuman", 100)
-print(fuel1)
-fuel1.add_fuel(100)
-print(fuel1)
-fuel1.drive(200)
-print(fuel1)
